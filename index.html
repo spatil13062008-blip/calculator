@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud Based Calculator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>Cloud Based Calculator</h2>
+
+<form method="POST" action="/calculate">
+    <input type="number" step="any" name="num1" placeholder="Enter first number" required>
+    
+    <select name="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+
+    <input type="number" step="any" name="num2" placeholder="Enter second number" required>
+
+    <button type="submit">Calculate</button>
+</form>
+
+{% if result is defined %}
+<p class="result">Result: {{ result }}</p>
+{% endif %}
+
+</body>
+</html>
